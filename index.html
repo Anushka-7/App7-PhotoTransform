@@ -42,7 +42,7 @@
 
  <script>//The <script> is a HTML element allows for manipulation of the embedded content.
          // The following code lets you know when the file was last modified
-	        // This will help you know if you are looking at the new version of the file or if there is a delay on GitHub.
+	 // This will help you know if you are looking at the new version of the file or if there is a delay on GitHub.
          var docMod = document.lastModified; // gets last modified date and time of the index.html file
          alert("This file last modified " + docMod);// generates alert box with time stamp. If annoying, comment out this entire line.
          console.log("This file last modified  " + docMod); // displays last modified date and time in the javascipt browser console 
@@ -68,36 +68,37 @@
                        sy = py;
                        }
                        py = (ey + sy) >> 1;
-                 }
-                 var ratio = (py / ih);
-                 return (ratio===0)?1:ratio;
-         }
+                       }
+		       var ratio = (py / ih);
+		       return (ratio===0)?1:ratio;
+         	       }
 
          function drawImageIOSFix(ctx, img, sx, sy, sw, sh, dx, dy, dw, dh) {
                  var vertSquashRatio = detectVerticalSquash(img);
                  ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh / vertSquashRatio); // Works only if whole image is displayed:
 
-        }
+        	 }
 
         /* window.onload necessary to keep javascripts from running before the app gets a chance to load entirely. */
         window.onload = function() {
                 var fileInput = document.getElementById('fileInput');
                 var messageDisplayArea = document.getElementById('messageDisplayArea');
                 /* fileInput.addEventListener looks for any change in the <input> tag indicating that the user has selected a file (picture). */
-                fileInput.addEventListener('change', function(e) {
+                
+		fileInput.addEventListener('change', function(e) {
                 var file = fileInput.files[0];
                 var imageType = /image.*/;
-                   /* if (file.type.match(imageType)) checks that the selected file is indeed an image. */
-                   if (file.type.match(imageType)) {
-                   /* new FileReader(); and reader.onload start some kind of file reading process in javaScript. I do not understand why this is necessary although it may simply slow things down to let the image load. */
-                   var reader = new FileReader();
-                   reader.onload = function(e) {
-                   /* messageDisplayArea.innerHTML not needed but allows you to send a message at this point in the program. */
-                   messageDisplayArea.innerHTML = "You picked an image!";
-                   /* new Image() and img.onload start some kind of new image creation process in javaScript. I do not understand why this is necessary although it may simply slow things down to let the image load. */
-                   var img = new Image();
-                   img.onload = function() {
-                   /*This finally draws the image onto the first drawing canvas. The specific canvas is referred to by "context". This is established down in the HTML part of the file just under the first <canvas> tag. If we weren't worried about fixing an iPhone bug we would use context.drawImage(image, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 600, 500) instead of drawImageIOSFix */
+                /* if (file.type.match(imageType)) checks that the selected file is indeed an image. */
+                if (file.type.match(imageType)) {
+		/* new FileReader(); and reader.onload start some kind of file reading process in javaScript. I do not understand why this is necessary although it may simply slow things down to let the image load. */
+		var reader = new FileReader();
+			reader.onload = function(e) {
+			/* messageDisplayArea.innerHTML not needed but allows you to send a message at this point in the program. */
+			messageDisplayArea.innerHTML = "You picked an image!";
+			/* new Image() and img.onload start some kind of new image creation process in javaScript. I do not understand why this is necessary although it may simply slow things down to let the image load. */
+		var img = new Image();
+			img.onload = function() {
+		/*This finally draws the image onto the first drawing canvas. The specific canvas is referred to by "context". This is established down in the HTML part of the file just under the first <canvas> tag. If we weren't worried about fixing an iPhone bug we would use context.drawImage(image, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 600, 500) instead of drawImageIOSFix */
              
             
        drawImageIOSFix(context,img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 600, 500);
@@ -129,34 +130,32 @@
  </head><!-- This indicates the end of the <head> function, notice the slash -->
 
  <body><!-- <body> contains the content that is inteted to be displayed -->
- <div data-role="page">
- <div data-role="header">
-      <h1>Primary Colors</h1></div><!-- /header -->
- <div data-role="content">	
-      <h2>Push button to take picture.</h2>
- <div>
+ 	<div data-role="page">
+	<div data-role="header">
+	<h1>Primary Colors</h1></div><!-- /header -->
+	<div data-role="content">	
+	<h2>Push button to take picture.</h2>
+	
+	<div>
   
  Press orange button to create or choose image file:
- <input type="file" id="fileInput" STYLE="background-color: #FF6600;"> 
- 
- </div>
-  
- <div id="messageDisplayArea"></div>
-  
-  
-         <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas><!-- The code about codes for a canvas on my web page -->
-         <!-- The width= 600 and height=500 determines the size of the displayed canvas; The canvas id = canvas makes it identifiable when we chose to use functions and manipulate it. -->
-        
-         <script>/* This script initiates the cavas and puts the text on the canvas "myCanvas" */
-                 var canvas = document.getElementById('myCanvas');
-                 var context = canvas.getContext("2d");
-                 context.font = '20pt Calibri';
-                 context.fillStyle = "black";
-                 context.fillText("Original image will go here", 10, 20);
-         </script>
-
-</div><!-- /content -->
-    
+	<input type="file" id="fileInput" STYLE="background-color: #FF6600;"> 	
+	</div>
+	<div id="messageDisplayArea"></div>
+	
+	<canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas><!-- The code about codes for a canvas on my web page -->
+        <!-- The width= 600 and height=500 determines the size of the displayed canvas; The canvas id = canvas makes it identifiable when we chose to use functions and manipulate it. -->
+	
+	<script>/* This script initiates the cavas and puts the text on the canvas "myCanvas" */
+		var canvas = document.getElementById('myCanvas');
+                var context = canvas.getContext("2d");
+                context.font = '20pt Calibri';
+                context.fillStyle = "black";
+                context.fillText("Original image will go here", 10, 20);
+	</script>
+	
+	</div><!-- /content -->
+	
 <div data-role="footer" data-position="fixed"><!--Makes the footer fizxed at the bottom of the page -->
      
 <p>DIY Diagnostics</p><!--This indicates the end of the code -->
