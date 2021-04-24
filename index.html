@@ -144,6 +144,9 @@
 	<div id="messageDisplayArea"></div>
 	
 	<canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas><!-- This codes for the first canvas on my web page -->
+	
+	<canvas id="myCanvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas><!-- This codes  codes for the second canvas on my web page -->
+
         <!-- The width= 600 and height=500 determines the size of the displayed canvas; The canvas id = canvas makes it identifiable when we chose to use functions and manipulate it. -->
 	
 	<script>/* This script initiates the cavas and puts the text on the canvas "myCanvas" */
@@ -151,14 +154,8 @@
                 var context = canvas.getContext("2d");// A HTML object with properties to draw on the canvas
                 context.font = '20pt Calibri';//Defines the font and size of the text
                 context.fillStyle = "black";//Defines the color of the text
-                context.fillText("Original image will go here", canvas.width/2, canvas.height/2);// Defines where the text will be aligned on the canvas
-	</script>
-	
-	</div>
-		
-	<canvas id="myCanvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas><!-- This codes  codes for the second canvas on my web page -->
-	
-	<script>/* This script initiates the cavas and puts the text on the canvas "myCanvas2" */
+                context.fillText("Original image will go here", 10, 20);// Defines where the text will be aligned on the canvas
+			
 		var canvas = document.getElementById('myCanvas2'); //finds the canvas element
 		var ctx=canvas.getContext("2d"); // A HTML object with properties to draw on the canvas
 		ctx.font="20pt Calibri"; //Defines the font and size of the text
