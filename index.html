@@ -152,13 +152,13 @@
 	<script>/* This script initiates the cavas and puts the text on the canvas "myCanvas" */
 		var canvas = document.getElementById('myCanvas');//finds the canvas element
                 var context = canvas.getContext("2d");// A HTML object with properties to draw on the canvas
-                context.font = '20pt Calibri';//Defines the font and size of the text
+                context.font = '50pt Calibri';//Defines the font and size of the text
                 context.fillStyle = "black";//Defines the color of the text
-                context.fillText("Original image will go here", 10, 20);// Defines where the text will be aligned on the canvas
+                context.fillText("Original image will go here", 170, 250);// Defines where the text will be aligned on the canvas
 			
 		var canvas = document.getElementById('myCanvas2'); //finds the canvas element
 		var ctx=canvas.getContext("2d"); // A HTML object with properties to draw on the canvas
-		ctx.font="20pt Calibri"; //Defines the font and size of the text
+		ctx.font="50pt Calibri"; //Defines the font and size of the text
 		ctx.fillStyle = "blue"; //Defines the color of the text
 		ctx.textAlign = "center"; // Defines where the text will be aligned on the canvas
 		ctx.fillText("Load Transformed Image!", canvas.width/2, canvas.height/2); //Draws filled text on the canvas
