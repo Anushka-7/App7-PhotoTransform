@@ -103,10 +103,10 @@ fileInput.addEventListener('change', function(e) {
         /*This finally draws the image onto the first drawing canvas. The specific canvas is referred to by "context". This is established down in the HTML part of the file just under the first <canvas> tag. If we weren't worried about fixing an iPhone bug we would use context.drawImage(image, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 600, 500) instead of drawImageIOSFix */
         drawImageIOSFix(context,img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 600, 500);//Return the image with its natural height and width
     
-	var canvas2 = document.getElementById('myCanvas2'); 
-        var context2 = canvas2.getContext("2d");  
+	var canvas2 = document.getElementById('myCanvas2');//return the element by recognizing the id, in this case (var Canvas2)
+        var context2 = canvas2.getContext("2d"); // Used to obtain the rendering context and its drawing functions {Source: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_usage)
        
-       	var imageData = context.getImageData(0, 0, 600, 500); 
+       	var imageData = context.getImageData(0, 0, 600, 500);//returns the image data
        	var data = imageData.data; 
        
       
