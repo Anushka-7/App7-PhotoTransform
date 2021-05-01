@@ -117,29 +117,7 @@ fileInput.addEventListener('change', function(e) {
        }
          
          context2.putImageData(imageData, 0, 0); 
-        
-//ALTERNATE CODE TO PULL IMAGE ONTO SECOND CANVAS + SHOW ONLY THE BLUE PIXELS. 
-       //var img1 = new Image();
-          //img1=img;
-          //drawImageIOSFix(context, img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 600, 500);
-          //drawImageIOSFix(context2, img1, 0, 0, img1.naturalWidth, img1.naturalHeight, 0, 0, 600, 500);
-          
-          //var imageData = context2.getImageData(0, 0, 600, 500);
-          //var data = imageData.data;
-          
-	//for(var i = 0; i < data.length; i += 4) { 
-          // red
-          //data[i] = brightness;
-          // green
-          //data[i + 1] = brightness;
-          // blue
-          //data[i + 2] = ;
-        //}
-        // overwrite original image
-        //context.putImageData(imageData, 0, 0);
-      //}
-	      
- 
+  
         } // end of img.onload
         
         img.src = reader.result;
